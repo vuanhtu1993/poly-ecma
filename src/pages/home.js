@@ -1,9 +1,5 @@
 var HomePage = function() {
-    return /*html*/`
-    <div>
-        <h1>Home page</h1>
-        <p>Website ban sach truc tuyen</p>
-    </div>`
+    return "<h1>Trang chủ</h1><p>Website bán sách trực tuyến</p>"
 }
 
 export default HomePage
