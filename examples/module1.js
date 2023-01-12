@@ -1,22 +1,15 @@
-function sum(a, b) {
-    return a + b
+function dientichHT(bankinh) {
+    var PI = 3.14
+    return bankinh*bankinh*PI
 }
 
-function logging(mes) {
-    console.info(mes)
-}
-
-function dientichCN() {
-
-}
-
-function dientichTRON() {
-    
+function logging(mesage) {
+    console.info("Logging service " + mesage)
 }
 
 export {
-    sum,
+    dientichHT,
     logging
 }
 
-export default sum;
+export default logging;
