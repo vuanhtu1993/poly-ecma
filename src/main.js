@@ -1,7 +1,8 @@
+import { render } from "../lib"
 import HomePage from "./pages/home"
 
 // DOM declaration
 var app = document.querySelector('#app')
 
-app.innerHTML = HomePage()
+render(HomePage, app)
 
