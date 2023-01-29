@@ -6,5 +6,5 @@ import './styles/main.css'
 // DOM declaration
 var app = document.querySelector('#app')
 
-render(ProductPage, app)
+render(ProductPage(), app)
 

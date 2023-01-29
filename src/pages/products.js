@@ -1,8 +1,10 @@
 import data from '../../db.json' assert {type: 'json'}
+import Header from '../components/header';
 
 const ProductPage = () => {
     return /*html*/`
         <div>
+            ${Header()}
             <h1>Trang sản phẩm</h1>
             <div class="flex">
             ${data.map(book => {
