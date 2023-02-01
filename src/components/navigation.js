@@ -1,6 +1,6 @@
 const Navigation = function() {
     return /*html*/`
-    <ul>
+    <ul class="flex gap-2 unlist-style">
         <li><a href="/">Trang chủ</a></li>
         <li><a href="/products">Sản phẩm</a></li>
         <li><a href="#">Liên hệ</a></li>
