@@ -1,28 +1,19 @@
-// ES5
-// Global scope
-// let global = 10s
+// // Global
+// var global = 10;
 
-function localFunction() {
-    // Local scope
-    let local = 20
-    console.log(global + local);
-}
+// // Local
+// function localFunction() {
+//     var local = 20
+//     console.log(local + global);
+// }
 
-console.log(global + local);
+// console.log(global + local);
 
-// localFunction()
-// ES6
-// let
-// Block - Code được định nghĩa bên trong {}
+// Block vùng chứa code bên trong dấu {}
+// let global = 10
+// let local = 40
+// {
+//     let local = 20
+// }
 
-const global = 10
-const local = 20
-{
-    const local = 30
-}
-console.log(global + local);
-
-// Const
-// const a = 10
-// a = 20;
-
+// console.log(global + local);
