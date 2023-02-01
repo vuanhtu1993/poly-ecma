@@ -1,8 +1,5 @@
-import Navigation from "../components/navigation";
-
-const ProductPage = function() {
+var ProductPage = function() {
     return `
-    ${Navigation()}
     <h1>Product page</h1>
     `
 }
