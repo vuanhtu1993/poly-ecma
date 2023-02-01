@@ -1,19 +1,31 @@
-// // Global
-// var global = 10;
+// var
+// let
+// const
 
-// // Local
+// Scope
+// // Global scope
+// var global = 100
+
+// // 
 // function localFunction() {
-//     var local = 20
+//     // Local scope
+//     var local = 50
 //     console.log(local + global);
 // }
 
+// // localFunction()
 // console.log(global + local);
 
-// Block vùng chứa code bên trong dấu {}
-// let global = 10
-// let local = 40
-// {
-//     let local = 20
-// }
+// Block scope 
+// vùng code bên trong {}
 
-// console.log(global + local);
+const PI = 3.1412
+PI = 3
+
+let global = 10
+let local = 50
+{
+    let local = 20
+}
+
+console.log(global + local);
