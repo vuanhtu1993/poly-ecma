@@ -1,5 +1,9 @@
+import Navigation from "../components/navigation"
+
 const ProductPage = function() {
-    return `<h1>Product page</h1>`
+    return `
+    ${Navigation()}
+    <h1>Product page</h1>`
 }
 
 export default ProductPage
