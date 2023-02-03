@@ -1,0 +1,15 @@
+.flex {
+    display: flex;
+}
+
+.gap-1 {
+    gap: 4px;
+}
+
+.gap-2 {
+    gap: 8px;
+}
+
+.unlist-style {
+    list-style: none;
+}
