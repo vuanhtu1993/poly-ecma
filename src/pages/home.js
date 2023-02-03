@@ -8,7 +8,7 @@ var HomePage = function() {
     <div>
         <h1>Home page</h1>
         <p>Website ban sach truc tuyen</p>
-        <div>
+        <div class="grid grid-cols-4 gap-2">
         ${data.map(function(book, index) {
             return /*html*/`
             <div>
