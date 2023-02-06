@@ -1,5 +1,5 @@
 import { render } from "../lib"
-import HomePage from "./pages/home"
+import HomePage from "@/pages/home"
 import ProductPage from "./pages/products"
 import Navigo from "navigo"
 import './style/main.css'
