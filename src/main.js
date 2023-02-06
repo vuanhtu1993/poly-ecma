@@ -12,8 +12,8 @@ router.on('/', function() {
     render(HomePage(), app)
 })
 
-router.on('/products', function() {
-    render(ProductPage(), app)
+router.on('/products/:id', function({data}) {
+    render(ProductPage(data.id), app)
 })
 
 router.resolve()
