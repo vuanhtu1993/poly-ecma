@@ -19,6 +19,12 @@ const task4 = function() {
 
 // Chưa xử lý bất đồng bộ
 task1()
+asyncTask('2')
+task3()
+task4()
+
+// Xử lý bất đồng bộ
+task1()
 // Task2
 asyncTask('2', function() {
     task3()
