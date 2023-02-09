@@ -3,26 +3,31 @@
 function loadScript(src, callback){
     // tạo thẻ <script>
     const script = document.createElement('script');
-    // <script src="http://javascript.info"></script>
-    script.src = src;
-    script.onload = function(){
-        callback(script);
+    script.src = src
+    script.onload = function() {
+        callback()
     }
-    script.onerror = function(){
-        callback(new Error('Loi roi anh oi'))
+    script.onerror = function() {
+        const err = new Error("Lỗi rồi em mie")
+        callback(err)
     }
-    // nhúng vào thẻ <head></head>
     document.head.append(script)
 }
-// setTimeout
-loadScript('http://javascript.info', function(error, script){
-    console.log('loaded script', script);
-    loadScript('http://javascript-vn.info', function(script){
-        console.log('loaded script', script);
-        loadScript('http://javascript-tl.info', function(script){
-            console.log('loaded script', script);
-            // ...
-            // callback hell - callback in callback
-        })
-    })
-});
+
+loadScript('https://cdn.jsdelivr.net/npm/lodash@4.17.211/lodash.min.js', function(error) {
+    if(error) {
+        console.log(error);
+    } else {
+        console.log(_.uniq([2, 1, 2]));;
+    }
+})
+// _.uniq([2, 1, 2]);
+
+// forEach map
+
+// sync and async
+// Xử lý async
+// 1. Callback
+
+// 2. Promise
+// 3. AW

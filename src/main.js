@@ -12,12 +12,12 @@ const router = new Navigo('/');
 // Defined router
 router.on('/', function() {
     console.log("render HomePage");
-    render(HomePage(), app)
+    render(() => HomePage(), app)
 })
 
 router.on('/products/:id', function({data}) {
     // console.log(data);
-    render(ProductPage(data.id), app)
+    render(() => ProductPage(data.id), app)
 })
 
 router.resolve();
