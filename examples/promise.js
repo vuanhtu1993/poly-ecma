@@ -1,28 +1,34 @@
-const asyncTask = function(text) {
+const asyncTask = function(text, status) {
     const rand = Math.random() * (3000 - 500) + 500
     // Asynchronous function
     return new Promise(function(resolve, reject) {
         // Async
         setTimeout(function() {
-            // console.log(`${text} - ${Math.round(rand)}ms`);
-            resolve(`${text} - ${Math.round(rand)}ms`)
+            if(status) {
+                resolve(`${text} - ${Math.round(rand)}ms`)
+            } else {
+                reject(`${text} got error`)
+            }
         }, rand)
     })
 }
 
 // Consumer
-asyncTask("task1")
-.then(function(response) {
-    console.log(response);
-    return asyncTask("task2")
-})
-.then(function(response) {
-    console.log(response);
-    return asyncTask("task3")
-})
-.then(function(response) {
-    console.log(response);
-})
+// asyncTask("task1", true)
+// .then(function(response) {
+//     console.log(response);
+//     return asyncTask("task2", false)
+// })
+// .then(function(response) {
+//     console.log(response);
+//     return asyncTask("task3")
+// })
+// .then(function(response) {
+//     console.log(response);
+// })
+// .catch(function(error) {
+//     console.log(error);
+// })
 // // class
 // // Producer
 // const promise = new Promise(function(resolve, reject) {
@@ -39,3 +45,14 @@ asyncTask("task1")
 //     console.log(response);
 // })
 // window.promise = promise
+
+// fetch
+const data = fetch('http://localhost:3000/books') //Producer
+
+// Consumer
+data.then(function(response) {
+    // console.log(response);
+    return response.json()
+}).then(function(data) {
+    console.log(data);
+})
