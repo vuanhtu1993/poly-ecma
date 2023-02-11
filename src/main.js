@@ -11,14 +11,14 @@ const router = new Navigo("/", {linksSelector: "a"})
 var app = document.querySelector('#app')
 
 router.on("/", function() {
-    render(HomePage(), app)
+    render(HomePage, app)
 })
-router.on("/products", function() {
-    render(ProductPage(), app)
+router.on("/products/:id", function({data}) {
+    render(() => ProductPage(data.id), app)
 })
 
 router.notFound(function() {
-    render(NotFoundPage(), app)
+    render(NotFoundPage, app)
 })
 router.resolve()
 
