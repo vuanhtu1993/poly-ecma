@@ -7,14 +7,27 @@
 
 // Async
 // setTimeout
-function asyncFunc(text, time) {
+function asyncFunc(text, time, callback) {
     setTimeout(function() {
         console.log(text);
+        if(callback) {
+            callback()
+        }
     }, time) // 1s
 }
 
-console.log("task1");
-asyncFunc("task2", 0)
-// alert("task phat sinh")
-console.log("task3");
-console.log("task4");
+asyncFunc("task1", 1000, function() {
+    asyncFunc("task2", 500, function() {
+        asyncFunc("task3", 900, function() {
+            asyncFunc("task4", 800, function() {
+                asyncFunc("task4", 800, function() {
+                    asyncFunc("task4", 800, function() {
+                        asyncFunc("task4", 800, function() {
+        
+                        })
+                    })
+                })
+            })
+        })
+    })
+})
