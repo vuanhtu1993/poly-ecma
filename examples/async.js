@@ -9,18 +9,19 @@
 // setTimeout
 
 
-const asyncFunc = function(text, time) {
+const asyncFunc = function(text, time, callback) {
     setTimeout(function() {
         console.log(text);
+        if(callback) {
+            callback()
+        }
     }, time)  //3s
 }
 
-// asyncFunc("task1", 3000)
-// asyncFunc("task2", 500)
-// asyncFunc("task3", 800)
-// asyncFunc("task4", 1000)
-// Sync
-console.log("task1");
-asyncFunc("task2", 500)
-console.log("task3");
-console.log("task4");
+asyncFunc("task1", 500, function() {
+    asyncFunc("task2", 300, function() {
+        asyncFunc("task3", 600, function() {
+            asyncFunc("task4", 1000)
+        })
+    })
+})
