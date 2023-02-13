@@ -21,7 +21,15 @@ const asyncFunc = function(text, time, callback) {
 asyncFunc("task1", 500, function() {
     asyncFunc("task2", 300, function() {
         asyncFunc("task3", 600, function() {
-            asyncFunc("task4", 1000)
+            asyncFunc("task3", 600, function() {
+                asyncFunc("task3", 600, function() {
+                    asyncFunc("task3", 600, function() {
+                        asyncFunc("task3", 600, function() {
+            
+                        })
+                    })
+                })
+            })
         })
     })
 })
