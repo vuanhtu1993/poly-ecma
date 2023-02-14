@@ -10,13 +10,11 @@ var app = document.querySelector("#app")
 // app.innerHTML = ProductPage()
 
 router.on('/', function() {
-    console.log("home page");
     render(HomePage, app)
 })
 
-router.on('/products', function() {
-    console.log("Product page");
-    render(ProductPage, app)
+router.on('/products/:id', function({data}) {
+    render(() => ProductPage(data.id), app)
 })
 
 router.resolve()
