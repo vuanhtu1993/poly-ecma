@@ -1,8 +1,21 @@
+import { useEffect, useState } from "../../lib";
 import Navigation from "../components/navigation"
-import data from '../../db.json' assert {type: 'json'}
+// import data from '../../db.json' assert {type: 'json'}
 
 var HomePage = function() {
-    console.log(data);
+    const [data, setData] = useState([])
+
+    useEffect(function() {
+        fetch('http://localhost:3000/books')
+        .then(function(res) {
+            return res.json()
+        })
+        .then(function(dataFetch) {
+            setData(dataFetch)
+        });
+    }, [])
+    
+        
     return /*html*/`
     ${Navigation()}
     <h1>Trang chủ</h1>
