@@ -1,8 +1,23 @@
 import Navigation from "../components/navigation"
-import data from '../../db.json' assert {type: "json"}
+// import data from '../../db.json' assert {type: "json"}
+import {useState, useEffect} from '../../lib'
 
 var HomePage = function() {
-    console.log(data);
+    const [data, setData] = useState([])
+
+    useEffect(function() {
+        fetch('http://localhost:3000/books')
+        .then(function(res) {
+            return res.json()
+        })
+        .then(function(dataFetch) {
+            // console.log(data);
+            setData(dataFetch)
+        });
+    }, []) // watch tham số cần thay đổi (shouldUpdate)
+
+
+    
     return /*html*/`
     ${Navigation()}
     <div>
