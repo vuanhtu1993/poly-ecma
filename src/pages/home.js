@@ -11,7 +11,10 @@ var HomePage = function() {
         })
     }, [])
     return /*html*/`<div>
+        <div class="flex justify-between">
         <h1 class="bg-red-100 text-lg">Home page</h1>
+        <a class="bg-blue-300" href="/admin">Admin</a>
+        </div>
         <p>Website ban sach truc tuyen</p>
         <div class="grid grid-cols-4 gap-2">
         ${data.map(function(item) {

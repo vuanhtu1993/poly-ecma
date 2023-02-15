@@ -1,4 +1,4 @@
-import {useState, useEffect} from '../../../lib'
+import {useState, useEffect, router} from '../../../lib'
 import { deleteBook } from '../../api/book.api'
 
 const Dashboard = function() {
@@ -19,7 +19,7 @@ const Dashboard = function() {
                 e.preventDefault()
                 const id = btn.dataset.id
                 deleteBook(id)
-                .then(() => console.log("Delete successfully"))
+                .then(() => router.navigate())
             })
         })
     })
@@ -43,7 +43,7 @@ const Dashboard = function() {
                 <img src="${book.images[0].base_url}"/>
             </td>
             <td class="border border-slate-300 flex gap-3">
-                <button class="bg-yellow-400 p-2 rounded-lg">Sửa</button>
+                <a href="/admin/book/${book.id}" class="bg-yellow-400 p-2 rounded-lg">Sửa</a>
                 <button type="button" class="bg-red-400 p-2 rounded-lg delete-btn" data-id="${book.id}">Xoá</button>
             </td>
         </tr>
