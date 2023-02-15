@@ -1,8 +1,22 @@
+import { useEffect, useState } from "../../lib"
 import Navigation from "../components/navigation"
-import data from '../../db.json' assert {type: 'json'}
 
 var HomePage = function() {
-    console.log(data);
+    // Tạo state cho component
+    const [data, setData] = useState([])
+
+    useEffect(function() {
+        fetch('http://localhost:3000/books')
+        .then(function(res) {
+            return res.json()
+        })
+        .then(function(data) {
+            setData(data)
+        })
+    }, []) // Tham số xác định trạng thái render lại components
+
+    
+
     return /*html*/`
     ${Navigation()}
     <div>
