@@ -1,8 +1,22 @@
+import { useEffect, useState } from "../../lib"
 import Navagation from "../components/navigation"
-import data from '../../db.json' assert {type: 'json'}
 
 var HomePage = function() {
-    console.log(data);
+    // Array destructoring - Object destructoring
+    const [data, setData] = useState([])
+
+    useEffect(function() {
+        fetch('http://localhost:3000/books')
+        .then(function(res) {
+            return res.json()
+        })
+        .then(function(data) {
+            setData(data)
+        });
+    }, [])
+
+    
+
     return /*html*/`
     ${Navagation()}
     <div>
