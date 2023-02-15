@@ -10,8 +10,10 @@ router.on('/', function() {
     render(HomePage, app)
 })
 
+// truyền callback
+
 router.on('/products/:id', function({data}) {
-    render(ProductPage(data.id), app)
+    render(() => ProductPage(data.id), app)
 })
 
 router.resolve()
