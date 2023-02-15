@@ -1,11 +1,9 @@
-import { render } from "../lib"
+import { render, router } from "../lib"
 import HomePage from "./pages/home"
 import ProductPage from "./pages/products"
 import './styles/main.css'
-import Navigo from "navigo"
 import NotFoundPage from "./pages/notFound"
-
-const router = new Navigo("/", {linksSelector: "a"})
+import Dashboard from "./pages/admin/dashboard"
 
 // DOM declaration
 var app = document.querySelector('#app')
@@ -15,6 +13,10 @@ router.on("/", function() {
 })
 router.on("/products/:id", function({data}) {
     render(() => ProductPage(data.id), app)
+})
+
+router.on("/admin", function() {
+    render(Dashboard, app)
 })
 
 router.notFound(function() {

@@ -6,10 +6,10 @@ var HomePage = function() {
         fetch('http://localhost:3000/books').then(function(res) {
             return res.json()
         }).then(function(data) {
-            console.log(data);
-            // setData(data)
+            // console.log(data);
+            setData(data)
         })
-    })
+    }, [])
     return /*html*/`<div>
         <h1 class="bg-red-100 text-lg">Home page</h1>
         <p>Website ban sach truc tuyen</p>
