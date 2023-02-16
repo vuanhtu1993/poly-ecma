@@ -25,6 +25,7 @@ var HomePage = function() {
         
     return /*html*/`
     ${Navigation()}
+    <a href="/admin" class="bg-red-400 underline">Admin</a>
     <h1>Trang chủ</h1>
     <p>Website bán sách trực tuyến</p>
     <div class="grid grid-cols-4 gap-2">
