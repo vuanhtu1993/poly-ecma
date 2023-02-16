@@ -22,6 +22,7 @@ var HomePage = function() {
     ${Navigation()}
     <div>
         <h1>Home page</h1>
+        <a class="bg-red-400" href="/admin">Admin</a>
         <p>Website ban sach truc tuyen</p>
         <img class="w-full" src="/banner1.png"/>
         <div class="grid grid-cols-4 gap-2">
