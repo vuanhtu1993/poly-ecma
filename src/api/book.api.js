@@ -8,6 +8,10 @@ const getBookById = function(id) {
     return instance.get(`/books/${id}`)
 }
 
+const postBookById = function(id, data) {
+    return instance.post(`/books/${id}`, data)
+}
+
 const deleteBook = function(id) {
     return instance.delete(`/books/${id}`)
 }
@@ -15,5 +19,6 @@ const deleteBook = function(id) {
 export {
     getBooks,
     getBookById,
-    deleteBook
+    deleteBook,
+    postBookById
 }
