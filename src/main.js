@@ -11,7 +11,7 @@ var app = document.querySelector('#app')
 // Defined router
 router.on('/', function() {
     console.log("render HomePage");
-    render(() => HomePage(), app)
+    render(HomePage, app)
 })
 
 router.on('/products/:id', function({data}) {
