@@ -25,7 +25,7 @@ var HomePage = function() {
         <div class="grid grid-cols-4 gap-2">
         ${data.map(function(book, index) {
             return /*html*/`
-            <a href="/products/${book.id}">
+            <a href="/products/${book.id}?id_cate=${book.categories.id}">
                 <img src="${book.images[0].base_url}"/>
                 <h3>${book.name}</h3>
             </a>

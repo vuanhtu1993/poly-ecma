@@ -2,7 +2,10 @@ import Navigation from "../components/navigation";
 import {useEffect, useState} from '../../lib'
 
 var ProductPage = function(id) {
+    const param = new URLSearchParams(location.search)
+    const id_cate = param.get('id_cate')
     const [book, setBook] = useState({})
+    const [relatedBook, setRelatedBook] = useState([])
 
     useEffect(function() {
         fetch(`http://localhost:3000/books/${id}`)
@@ -15,6 +18,17 @@ var ProductPage = function(id) {
         })
     }, [])
 
+    useEffect(function() {
+        fetch(`http://localhost:3000/books?categories.id=${id_cate}`)
+        .then(function(res) {
+            return res.json()
+        })
+        .then(function(data) {
+            console.log(data);
+            setRelatedBook(data)
+        })
+    }, [])
+    console.log(relatedBook, "relatedBook");
     // optional chaining
     return /*html*/`
     ${Navigation()}
