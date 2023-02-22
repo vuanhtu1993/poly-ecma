@@ -1,27 +1,11 @@
 import { render, router } from "../lib"
-import BookUpdate from "./pages/admin/bookUpdate"
-import Dashboard from "./pages/admin/dashboard"
-import HomePage from "./pages/home"
-import ProductPage from "./pages/products"
 import './style/main.css'
 
 // DOM declaration
 var app = document.querySelector('#app')
 
 router.on('/', function() {
-    render(HomePage, app)
-})
-
-router.on('/products/:id', function({data}) {
-    render(() => ProductPage(data.id), app)
-})
-
-router.on('/admin', function() {
-    render(Dashboard, app)
-})
-
-router.on('/admin/book/:id', function({data}) {
-    render(() => BookUpdate(data.id), app)
+    render(() => `<h1 class="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-pink-400 to-red-600">Base EMCA project</h1>`, app)
 })
 
 router.resolve()
